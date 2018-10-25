@@ -1,25 +1,25 @@
 public class HorseBarn {
     private Horses[] spaces;
-    private String name;
+
 
     public HorseBarn(String name, Horses[] spaces)
     {
-        this.name = name;
+
         this.spaces = spaces;
     }
 
     public int findHorseSpace(String name, Horses[] spaces)
     {
         for (int i = 0; i < this.spaces.length; i++) {
-            if (this.spaces[i] != null && this.name.equals(this.spaces[i].getName())) {
-                return i;
+            if (this.spaces[i] != null && name.equals(this.spaces[i].getName())) {
+                return i+1;
             }
 
         }
         return -1;
     }
 
-    public void consolidate( Horses[] spaces)
+    public void consolidate()
     {
         for (int i=0; i<this.spaces.length-1; i++)
         {
@@ -37,5 +37,6 @@ public class HorseBarn {
             }
         }
     }
+
 
 }
